@@ -28,7 +28,7 @@ export default function TodoApp() {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
+  const a = 1;
   return (
     <div className="todo-app">
       {/* header */}
