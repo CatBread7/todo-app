@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { DarkModeContext } from "./context/DarkModeProvider";
 
 import Tab from "./components/Tab";
 import TodoRow from "./components/TodoRow";
@@ -12,9 +11,9 @@ const tabsInfo = [
   { label: "Completed" },
 ];
 const defaultTodos = [
-  { label: "공부하기", checked: false },
-  { label: "밥먹기", checked: false },
-  { label: "강의 보기", checked: true },
+  { key: "u1", label: "공부하기", checked: false },
+  { key: "u2", label: "밥먹기", checked: false },
+  { key: "u3", label: "강의 보기", checked: true },
 ];
 
 export default function TodoApp() {
@@ -46,11 +45,11 @@ export default function TodoApp() {
       </div>
       {/* body */}
       <div className="todo-body">
-        {todos.map((row) => (
+        {todos.map((todo) => (
           <TodoRow
-            key={row.label}
-            label={row.label}
-            checked={row.checked}
+            key={todo.key}
+            label={todo.label}
+            checked={todo.checked}
             currentTab={currentTab}
             todos={todos}
             setTodos={setTodos}

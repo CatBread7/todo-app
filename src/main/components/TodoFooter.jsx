@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function TodoFooter({ todos, setTodos }) {
   const [todoText, setTodoText] = useState("");
@@ -13,7 +14,7 @@ export default function TodoFooter({ todos, setTodos }) {
   };
   const handleAdd = () => {
     if (!todoText || todoText.trim().length === 0) return;
-    setTodos([...todos, { label: todoText, checked: false }]);
+    setTodos([...todos, { key: uuidv4(), label: todoText, checked: false }]);
     setTodoText("");
   };
 
