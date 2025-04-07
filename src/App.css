@@ -149,3 +149,22 @@ body.dark-mode {
   justify-content: center;
   align-items: center;
 }
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .todo-app {
+    width: 700px;
+    border-radius: 8px;
+    margin: 2rem auto;
+    min-height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 4rem);
+  }
+
+  .todo-header {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .todo-footer {
+    border-radius: 0 0 8px 8px;
+  }
+}

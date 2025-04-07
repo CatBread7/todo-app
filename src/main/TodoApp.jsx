@@ -16,7 +16,7 @@ const defaultTodos = [
   { label: "밥먹기", checked: false },
   { label: "강의 보기", checked: true },
 ];
-const a = 1;
+
 export default function TodoApp() {
   const [currentTab, setCurrentTab] = useState(tabsInfo[0].label);
 
