@@ -12,6 +12,7 @@ export default function TodoFooter({ todos, setTodos }) {
     }
   };
   const handleAdd = () => {
+    if (!todoText) return;
     setTodos([...todos, { label: todoText, checked: false }]);
     setTodoText("");
   };
