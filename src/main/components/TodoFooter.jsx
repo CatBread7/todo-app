@@ -12,7 +12,7 @@ export default function TodoFooter({ todos, setTodos }) {
     }
   };
   const handleAdd = () => {
-    if (!todoText) return;
+    if (!todoText || todoText.trim().length === 0) return;
     setTodos([...todos, { label: todoText, checked: false }]);
     setTodoText("");
   };
