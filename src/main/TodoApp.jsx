@@ -21,7 +21,10 @@ export default function TodoApp() {
 
   const [todos, setTodos] = useState(() => {
     const storedTodos = localStorage.getItem("todos");
-    return storedTodos ? JSON.parse(storedTodos) : defaultTodos;
+    if (!storedTodos) return defaultTodos;
+    const parsedTodos = JSON.parse(storedTodos);
+    // parse해야 Array.length 로 사용됨.
+    return parsedTodos.length > 0 ? parsedTodos : defaultTodos;
   });
 
   useEffect(() => {
