@@ -36,22 +36,44 @@
   }
 }
 
+/* 다크모드 버튼 빙글 */
+.rotate-icon {
+  animation: rotate-animation 0.5s ease;
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f5f5f5;
   --text-color: #333333;
+  --tab-text-color: rgb(91, 9, 4);
   --border-color: #dddddd;
   --button-bg: #e0e0e0;
   --button-color: #333333;
+  --input-bg: #ececec;
+  --input-button-text: rgb(237, 237, 237);
+  --input-button-bg: rgb(42, 42, 42);
 }
 
 body.dark-mode {
   --bg-primary: #1c1e3b;
   --bg-secondary: #262842;
   --text-color: #ffffff;
+  --tab-text-color: orange;
   --border-color: #444444;
   --button-bg: #3a3f6d;
   --button-color: #ffffff;
+  --input-bg: #ffffff;
+  --input-button-text: rgb(237, 237, 237);
+  --input-button-bg: darkorange;
 }
 
 .todo-app {
@@ -80,6 +102,11 @@ body.dark-mode {
   gap: 1rem;
 }
 
+.todo-tab {
+  color: var(--tab-text-color);
+  text-align: center;
+}
+
 .todo-body {
   height: 66%;
   background-color: var(--bg-secondary);
@@ -90,6 +117,24 @@ body.dark-mode {
   display: flex;
   margin: 10px;
   color: var(--text-color);
+}
+
+.todo-footer {
+  display: flex;
+  margin: 20px;
+}
+.todo-input {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--input-bg);
+  width: 100%;
+  color: black;
+  padding-left: 10px;
+}
+.todo-input-button {
+  color: var(--input-button-text);
+  background-color: var(--input-button-bg);
+  width: 6rem;
 }
 
 .todo-delete-icon {
