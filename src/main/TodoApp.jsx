@@ -15,7 +15,6 @@ const defaultTodos = [
   { label: "공부하기", checked: false },
   { label: "밥먹기", checked: false },
   { label: "강의 보기", checked: true },
-  { label: "국비 패죽이기", checked: false },
 ];
 
 export default function TodoApp() {
