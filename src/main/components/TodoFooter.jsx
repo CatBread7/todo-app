@@ -19,23 +19,14 @@ export default function TodoFooter({ todos, setTodos }) {
   return (
     <>
       <input
+        className="todo-input"
         type="text"
         value={todoText}
         placeholder="Add Todo"
         onChange={handleChange}
         onKeyUp={handleEnter}
-        style={{
-          borderRadius: "10px",
-          overflow: "hidden",
-          backgroundColor: "white",
-          width: "100%",
-          color: "black",
-        }}
       />
-      <button
-        onClick={handleAdd}
-        style={{ backgroundColor: "darkorange", width: "6rem" }}
-      >
+      <button className="todo-input-button" onClick={handleAdd}>
         Add
       </button>
     </>

@@ -17,10 +17,9 @@ export default function Tab({ label, style, currentTab, setCurrentTab }) {
   return (
     <div
       onClick={handleOnTabClick}
+      className="todo-tab"
       style={{
-        color: "orange",
         ...onSelectedStyle,
-        textAlign: "center",
         ...{ style },
       }}
     >

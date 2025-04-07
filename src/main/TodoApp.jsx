@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DarkModeContext } from "./context/DarkModeProvider";
 
 import Tab from "./components/Tab";
@@ -11,15 +11,25 @@ const tabsInfo = [
   { label: "Active" },
   { label: "Completed" },
 ];
+const defaultTodos = [
+  { label: "공부하기", checked: false },
+  { label: "밥먹기", checked: false },
+  { label: "강의 보기", checked: true },
+  { label: "국비 패죽이기", checked: false },
+];
 
 export default function TodoApp() {
   const [currentTab, setCurrentTab] = useState(tabsInfo[0].label);
 
-  const [todos, setTodos] = useState([
-    { label: "공부하기", checked: false },
-    { label: "밥먹기", checked: false },
-    { label: "강의 보기", checked: true },
-  ]);
+  const [todos, setTodos] = useState(() => {
+    const storedTodos = localStorage.getItem("todos");
+    return storedTodos ? JSON.parse(storedTodos) : defaultTodos;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   return (
     <div className="todo-app">
       {/* header */}
@@ -50,7 +60,7 @@ export default function TodoApp() {
         ))}
       </div>
       {/* footer */}
-      <div style={{ display: "flex", margin: "20px" }}>
+      <div className="todo-footer">
         <TodoFooter todos={todos} setTodos={setTodos} />
       </div>
     </div>
