@@ -134,14 +134,18 @@ body.dark-mode {
   margin: 20px;
 }
 .todo-input {
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   overflow: hidden;
   background-color: var(--input-bg);
   width: 100%;
   color: black;
-  padding-left: 10px;
+  padding-left: 0.8rem;
 }
 .todo-input-button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   color: var(--input-button-text);
   background-color: var(--input-button-bg);
   width: 6rem;
