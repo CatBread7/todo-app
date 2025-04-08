@@ -118,7 +118,7 @@ body.dark-mode {
 }
 
 .todo-body {
-  height: 66%;
+  flex: 1 1 auto;
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
 }
