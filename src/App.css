@@ -110,6 +110,12 @@ body.dark-mode {
 .todo-tab:hover {
   opacity: 1;
 }
+.todo-tab.selected {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-underline-offset: 5px;
+}
 
 .todo-body {
   height: 66%;
