@@ -51,9 +51,8 @@ export default function TodoApp() {
         {todos.map((todo) => (
           <TodoRow
             key={todo.key}
-            label={todo.label}
-            checked={todo.checked}
             currentTab={currentTab}
+            todo={todo}
             todos={todos}
             setTodos={setTodos}
           />

@@ -1,21 +1,24 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { DarkModeContext } from "../context/DarkModeProvider";
 
-export default function TodoRow({
-  label,
-  selected,
-  currentTab,
-  todos,
-  setTodos,
-}) {
-  const { darkMode } = useContext(DarkModeContext);
-  const [checked, setChecked] = useState(selected);
+export default function TodoRow({ currentTab, todo, todos, setTodos }) {
+  const { key, label, checked } = todo;
   const handleClick = () => {
-    setChecked((prev) => !prev);
+    setTodos(
+      todos.map((todo) => {
+        if (todo.key === key) {
+          return { ...todo, checked: !checked };
+        } else {
+          return todo;
+        }
+      })
+    );
   };
   const handleDelete = () => {
-    setTodos(todos.filter((todo) => todo.label !== label));
+    console.log(todos, todo);
+    console.log(todos.filter((todo) => todo.key !== key));
+    setTodos(todos.filter((todo) => todo.key !== key));
   };
 
   const hiddenStyle =
@@ -28,19 +31,16 @@ export default function TodoRow({
     ? { textDecoration: "line-through" }
     : {};
   return (
-    <div
-      className={`todo-row ${darkMode ? "dark-mode" : ""}`}
-      style={hiddenStyle}
-      onClick={handleClick}
-    >
+    <div className={`todo-row`} style={hiddenStyle}>
       <input
-        id={`rowid_${label}`}
+        id={`${key}`}
         type="checkbox"
         style={{}}
         checked={checked ?? false}
-        onChange={() => {}}
+        onChange={handleClick}
       />
       <label
+        htmlFor={`${key}`}
         className="todoText"
         style={{ marginLeft: "0.5rem", ...additionalLabelStyle }}
       >
