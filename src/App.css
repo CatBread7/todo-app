@@ -96,7 +96,6 @@ body.dark-mode {
   height: 16%;
   background-color: var(--bg-primary);
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
@@ -110,6 +109,8 @@ body.dark-mode {
 .todo-tab {
   color: var(--tab-text-color);
   text-align: center;
+  font-size: 1.4rem;
+  margin: 0.3rem;
   opacity: 0.8;
 }
 .todo-tab:hover {
@@ -118,7 +119,7 @@ body.dark-mode {
 .todo-tab.selected {
   font-weight: bold;
   text-decoration: underline;
-  text-decoration-color: white;
+  text-decoration-color: var(--tab-text-color);
   text-underline-offset: 5px;
 }
 
