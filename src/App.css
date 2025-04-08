@@ -49,6 +49,9 @@
     transform: rotate(360deg);
   }
 }
+* {
+  box-sizing: border-box;
+}
 
 :root {
   --bg-primary: #ffffff;
@@ -149,6 +152,9 @@ body.dark-mode {
   color: var(--input-button-text);
   background-color: var(--input-button-bg);
   width: 6rem;
+}
+.todo-input-button:hover {
+  filter: brightness(125%);
 }
 
 .todo-delete-icon {
