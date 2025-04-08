@@ -64,6 +64,7 @@
   --input-bg: #ececec;
   --input-button-text: rgb(237, 237, 237);
   --input-button-bg: rgb(42, 42, 42);
+  --color-scrollbar: #b2b2b2;
 }
 
 body.dark-mode {
@@ -77,6 +78,7 @@ body.dark-mode {
   --input-bg: #ffffff;
   --input-button-text: rgb(237, 237, 237);
   --input-button-bg: darkorange;
+  --color-scrollbar: #868484;
 }
 
 .todo-app {
@@ -209,4 +211,19 @@ body.dark-mode {
   .todo-footer {
     border-radius: 0 0 8px 8px;
   }
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tab-text-color);
 }
