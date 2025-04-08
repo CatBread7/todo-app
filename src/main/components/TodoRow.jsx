@@ -26,33 +26,19 @@ export default function TodoRow({ todo, todos, setTodos }) {
     <div className={`todo-row`}>
       <input
         id={`${key}`}
+        className="todo-checkbox"
         type="checkbox"
-        style={{}}
         checked={checked ?? false}
         onChange={handleClick}
       />
       <label
         htmlFor={`${key}`}
-        className="todoText"
-        style={{ marginLeft: "0.5rem", ...additionalLabelStyle }}
+        className="todo-text"
+        style={additionalLabelStyle}
       >
         {label}
       </label>
-      <div
-        className="todoDeleteIcon"
-        onClick={handleDelete}
-        style={{
-          marginLeft: "auto",
-          marginRight: "10px",
-          borderRadius: "10px",
-          width: "1.5rem",
-          height: "1.5rem",
-          backgroundColor: "gray",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div className="todo-delete-icon" onClick={handleDelete}>
         <FaTrashAlt size="0.8rem" />
       </div>
     </div>

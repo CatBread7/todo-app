@@ -121,15 +121,40 @@ body.dark-mode {
 }
 
 .todo-body {
+  padding: 0.5rem 1rem;
+  margin: 0.1rem 0;
   flex: 1 1 auto;
+  overflow-y: auto;
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
 }
 
 .todo-row {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 10px;
   color: var(--text-color);
+}
+.todo-checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.todo-text {
+  flex: 1 1 0%;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+.todo-delete-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .todo-footer {
@@ -157,18 +182,6 @@ body.dark-mode {
   filter: brightness(125%);
 }
 
-.todo-delete-icon {
-  margin-left: auto;
-  margin-right: 10px;
-  border-radius: 10px;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: var(--button-bg);
-  color: var(--button-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 /* Media queries for responsive design */
 @media (max-width: 768px) {
   .todo-app {
