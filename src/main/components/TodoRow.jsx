@@ -2,7 +2,7 @@ import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { DarkModeContext } from "../context/DarkModeProvider";
 
-export default function TodoRow({ currentTab, todo, todos, setTodos }) {
+export default function TodoRow({ todo, todos, setTodos }) {
   const { key, label, checked } = todo;
   const handleClick = () => {
     setTodos(
@@ -16,22 +16,14 @@ export default function TodoRow({ currentTab, todo, todos, setTodos }) {
     );
   };
   const handleDelete = () => {
-    console.log(todos, todo);
-    console.log(todos.filter((todo) => todo.key !== key));
     setTodos(todos.filter((todo) => todo.key !== key));
   };
-
-  const hiddenStyle =
-    (currentTab === "Active" && checked) ||
-    (currentTab === "Completed" && !checked)
-      ? { display: "none" }
-      : {};
 
   const additionalLabelStyle = checked
     ? { textDecoration: "line-through" }
     : {};
   return (
-    <div className={`todo-row`} style={hiddenStyle}>
+    <div className={`todo-row`}>
       <input
         id={`${key}`}
         type="checkbox"

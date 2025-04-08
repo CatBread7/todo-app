@@ -16,6 +16,18 @@ const defaultTodos = [
   { key: "u3", label: "강의 보기", checked: true },
 ];
 
+const getFilteredItems = (todos, currentTab) => {
+  if (currentTab === "All") {
+    return todos;
+  } else if (currentTab === "Active") {
+    return todos.filter((todo) => todo.checked === false);
+  } else if (currentTab === "Completed") {
+    return todos.filter((todo) => todo.checked === true);
+  } else {
+    return [];
+  }
+};
+
 export default function TodoApp() {
   const [currentTab, setCurrentTab] = useState(tabsInfo[0].label);
 
@@ -26,6 +38,8 @@ export default function TodoApp() {
     // parse해야 Array.length 로 사용됨.
     return parsedTodos.length > 0 ? parsedTodos : defaultTodos;
   });
+
+  const filtered = getFilteredItems(todos, currentTab);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -48,7 +62,7 @@ export default function TodoApp() {
       </div>
       {/* body */}
       <div className="todo-body">
-        {todos.map((todo) => (
+        {filtered.map((todo) => (
           <TodoRow
             key={todo.key}
             currentTab={currentTab}
