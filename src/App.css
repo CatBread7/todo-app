@@ -105,6 +105,10 @@ body.dark-mode {
 .todo-tab {
   color: var(--tab-text-color);
   text-align: center;
+  opacity: 0.8;
+}
+.todo-tab:hover {
+  opacity: 1;
 }
 
 .todo-body {
