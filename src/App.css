@@ -67,7 +67,7 @@
   --color-scrollbar: #b2b2b2;
 }
 
-body.dark-mode {
+html.dark {
   --bg-primary: #1c1e3b;
   --bg-secondary: #262842;
   --text-color: #ffffff;

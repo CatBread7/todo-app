@@ -1,6 +1,5 @@
 import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
-import { DarkModeContext } from "../context/DarkModeProvider";
 
 export default function TodoRow({ todo, todos, setTodos }) {
   const { key, label, checked } = todo;

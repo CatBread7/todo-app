@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoSunny } from "react-icons/io5";
 import { IoMoon } from "react-icons/io5";
-import { DarkModeContext, useDarkMode } from "../context/DarkModeProvider";
+import { useDarkMode } from "../context/DarkModeProvider";
 
 export default function ToggleDarkMode() {
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -22,7 +22,7 @@ export default function ToggleDarkMode() {
       className={isRotating ? "rotate-icon" : ""}
       onClick={handleToggle}
     >
-      {darkMode ? <IoSunny size="1.2rem" /> : <IoMoon size="1.2rem" />}
+      {darkMode ? <IoMoon size="1.2rem" /> : <IoSunny size="1.2rem" />}
     </div>
   );
 }
