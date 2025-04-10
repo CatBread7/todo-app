@@ -1,15 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { IoSunny } from "react-icons/io5";
 import { IoMoon } from "react-icons/io5";
-import { DarkModeContext } from "../context/DarkModeProvider";
+import { DarkModeContext, useDarkMode } from "../context/DarkModeProvider";
 
 export default function ToggleDarkMode() {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { darkMode, toggleDarkMode } = useDarkMode();
   const [isRotating, setIsRotating] = useState(false);
 
   const handleToggle = () => {
-    setIsRotating(true);
     toggleDarkMode();
+    setIsRotating(true);
     setTimeout(() => setIsRotating(false), 500); // 0.5초 후 초기화 (애니메이션 시간과 맞춰주세요)
   };
   return (
