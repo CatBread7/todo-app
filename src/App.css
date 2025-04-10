@@ -98,6 +98,15 @@ html.dark {
   display: flex;
   align-items: center;
 }
+.toggle {
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 150ms ease-out;
+}
+.toggle:hover {
+  transform: scale(1.1);
+  color: var(--tab-text-color);
+}
 
 .todo-tabs {
   display: flex;

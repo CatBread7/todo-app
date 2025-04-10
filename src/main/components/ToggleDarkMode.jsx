@@ -19,7 +19,7 @@ export default function ToggleDarkMode() {
         cursor: "pointer",
         transition: "transform 0.3s ease",
       }}
-      className={isRotating ? "rotate-icon" : ""}
+      className={`toggle ${isRotating ? "rotate-icon" : ""}`}
       onClick={handleToggle}
     >
       {darkMode ? <IoMoon size="1.2rem" /> : <IoSunny size="1.2rem" />}
