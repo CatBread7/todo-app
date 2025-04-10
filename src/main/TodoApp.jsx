@@ -31,13 +31,7 @@ const getFilteredItems = (todos, currentTab) => {
 export default function TodoApp() {
   const [currentTab, setCurrentTab] = useState(tabsInfo[0].label);
 
-  const [todos, setTodos] = useState(() => {
-    const storedTodos = localStorage.getItem("todos");
-    if (!storedTodos) return defaultTodos;
-    const parsedTodos = JSON.parse(storedTodos);
-    // parse해야 Array.length 로 사용됨.
-    return parsedTodos.length > 0 ? parsedTodos : defaultTodos;
-  });
+  const [todos, setTodos] = useState(readTodosFromLocalStorage());
 
   const filtered = getFilteredItems(todos, currentTab);
 
@@ -78,4 +72,12 @@ export default function TodoApp() {
       </div>
     </div>
   );
+}
+
+function readTodosFromLocalStorage() {
+  const storedTodos = localStorage.getItem("todos");
+  if (!storedTodos) return defaultTodos;
+  const parsedTodos = JSON.parse(storedTodos);
+  // parse해야 Array.length 로 사용됨.
+  return parsedTodos.length > 0 ? parsedTodos : defaultTodos;
 }
